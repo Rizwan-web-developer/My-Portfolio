@@ -9,11 +9,18 @@ const experiences = [
     color: "primary" as const,
   },
   {
+    period: "2023 - 2024",
+    title: "Full Stack Developer",
+    company: "Oktopus Tech",
+    description: "Built and delivered client projects including corporate websites, SaaS platforms, and multi-gateway invoicing applications.",
+    color: "secondary" as const,
+  },
+  {
     period: "2022 - 2023",
     title: "Web Developer Intern",
     company: "Mobisoft Technologies",
     description: "Focused on responsive UI development and optimizing database queries for high-traffic sites.",
-    color: "secondary" as const,
+    color: "primary" as const,
   },
 ];
 
@@ -56,6 +63,24 @@ export default function Experience() {
             <div className="w-5/12 text-right">
               <div className="glass-card p-8 rounded-2xl border-l-4 border-secondary inline-block w-full">
                 <span className="text-[12px] font-semibold tracking-[0.1em] text-secondary">
+                  2023 - 2024
+                </span>
+                <h3 className="text-[32px] font-semibold text-text-primary mt-2">
+                  Full Stack Developer
+                </h3>
+                <p className="text-secondary text-[16px]">Oktopus Tech</p>
+                <p className="mt-4 text-text-secondary text-[16px]">
+                  Built and delivered client projects including corporate websites, SaaS platforms, and multi-gateway invoicing applications.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Item 3 - Left */}
+          <div className="relative flex items-center justify-between">
+            <div className="w-5/12">
+              <div className="glass-card p-8 rounded-2xl border-r-4 border-primary">
+                <span className="text-[12px] font-semibold tracking-[0.1em] text-primary">
                   2022 - 2023
                 </span>
                 <h3 className="text-[32px] font-semibold text-text-primary mt-2">
@@ -67,6 +92,8 @@ export default function Experience() {
                 </p>
               </div>
             </div>
+            <div className="z-20 bg-primary w-4 h-4 rounded-full neon-glow-teal border-4 border-surface" />
+            <div className="w-5/12" />
           </div>
         </div>
 
