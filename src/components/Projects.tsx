@@ -1,19 +1,42 @@
 "use client";
 
+import Link from "next/link";
+
 const projects = [
   {
+    slug: "lumina-curtains",
     title: "Lumina Curtains",
     description: "A premium website for custom curtains and window treatments. Built with modern web technologies to deliver a seamless browsing experience with elegant product showcases.",
     tags: ["Next.js", "Tailwind"],
-    link: "https://lumina-curtains.vercel.app/",
     image: "/Lumina Curtains.png",
   },
   {
+    slug: "apex-construction",
     title: "Apex Construction",
     description: "A professional construction company website featuring project portfolios, service listings, and client testimonials. Designed to showcase build quality and establish trust with potential clients.",
     tags: ["React", "Node.js", "Construction"],
-    link: "https://apex-construction-group-one.vercel.app/",
     image: "/Apex construction group.png",
+  },
+  {
+    slug: "oktopus-tech",
+    title: "Oktopus Tech",
+    description: "Our own agency website — built solo in 2 weeks. A full-service digital agency site covering services, portfolio, team, and lead generation. The ultimate proof of what one person can ship fast.",
+    tags: ["Next.js", "Framer Motion", "Solo Build"],
+    image: "/oktopus-tech-image.png",
+  },
+  {
+    slug: "nvoice",
+    title: "Nvoice",
+    description: "A full B2B invoicing & payments SaaS platform — Admin, Business, and Client roles. Built solo in 1 week with Next.js, PostgreSQL, and Stripe Connect. Ship fast, get paid faster.",
+    tags: ["Next.js", "PostgreSQL", "Stripe"],
+    image: "/Nvoice.png",
+  },
+  {
+    slug: "payflow",
+    title: "PayFlow",
+    description: "A personalized multi-merchant invoicing platform supporting Stripe, PayPal, Razorpay, Square, and bank transfer. Built solo in 1 day — zero payment-method friction.",
+    tags: ["Next.js", "Multi-Gateway", "1-Day Build"],
+    image: "/Payflow.png",
   },
 ];
 
@@ -27,7 +50,7 @@ export default function Projects() {
             Portfolio
           </span>
           <h2 className="text-3xl md:text-[48px] font-bold leading-tight tracking-tight text-text-primary">
-            Recent Deployments
+            Recent Case Studies
           </h2>
         </div>
       </div>
@@ -41,32 +64,20 @@ export default function Projects() {
           <div className="max-w-[1280px] mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
             {/* Image Side */}
             <div className={`rounded-2xl overflow-hidden ${index % 2 === 0 ? "order-1" : "order-1 md:order-2"}`}>
-              <div className="w-full aspect-video relative group">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                />
-                {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
-                  >
-                    <span className="px-6 py-3 bg-primary text-on-primary font-bold rounded-lg text-sm hover:scale-105 transition-transform">
-                      View Project ↗
-                    </span>
-                  </a>
-                )}
-                {!project.link && (
+              <Link href={`/case-studies/${project.slug}`}>
+                <div className="w-full aspect-video relative group cursor-pointer">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
                   <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
-                    <span className="px-6 py-3 bg-surface-container-high text-text-secondary font-bold rounded-lg text-sm border border-white/10">
-                      Coming Soon
+                    <span className="px-6 py-3 bg-primary text-on-primary font-bold rounded-lg text-sm hover:scale-105 transition-transform">
+                      View Case Study
                     </span>
                   </div>
-                )}
-              </div>
+                </div>
+              </Link>
             </div>
 
             {/* Content Side */}
@@ -84,20 +95,12 @@ export default function Projects() {
               <p className="text-sm md:text-[18px] leading-relaxed text-text-secondary">
                 {project.description}
               </p>
-              {project.link ? (
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-on-primary font-bold rounded-lg neon-glow-teal hover:scale-105 transition-all text-sm"
-                >
-                  View Project ↗
-                </a>
-              ) : (
-                <span className="inline-flex items-center gap-2 px-6 py-3 border border-white/20 text-text-secondary font-bold rounded-lg text-sm cursor-not-allowed">
-                  Coming Soon
-                </span>
-              )}
+              <Link
+                href={`/case-studies/${project.slug}`}
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-on-primary font-bold rounded-lg neon-glow-teal hover:scale-105 transition-all text-sm"
+              >
+                View Case Study
+              </Link>
             </div>
           </div>
         </div>

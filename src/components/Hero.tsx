@@ -39,12 +39,13 @@ export default function Hero() {
             >
               View My Work
             </button>
-            <button
-              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
-              className="px-6 py-3 border border-white/20 text-text-primary font-bold rounded-lg hover:bg-white/5 transition-all text-sm"
+            <a
+              href="/Muhammad_Rizwan_CV.docx.pdf"
+              download="Muhammad_Rizwan_CV.pdf"
+              className="px-6 py-3 border border-white/20 text-text-primary font-bold rounded-lg hover:bg-white/5 transition-all text-sm text-center"
             >
-              Get in Touch
-            </button>
+              Download CV
+            </a>
           </div>
         </div>
         <div className="relative flex justify-center items-center py-5">
